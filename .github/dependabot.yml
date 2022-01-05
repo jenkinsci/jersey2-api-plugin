@@ -6,6 +6,11 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    ignore:
+      - dependency-name: "org.glassfish.jersey:jersey-bom"
+        versions: [">=3.0.0"]
+      - dependency-name: "jakarta.activation:jakarta.activation-api"
+        versions: [">=2.0.0"]
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
