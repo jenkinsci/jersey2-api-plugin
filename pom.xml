@@ -56,6 +56,11 @@
       <groupId>org.glassfish.jersey.connectors</groupId>
       <artifactId>jersey-apache-connector</artifactId>
       <exclusions>
+        <!-- Provided by core -->
+        <exclusion>
+          <groupId>jakarta.annotation</groupId>
+          <artifactId>jakarta.annotation-api</artifactId>
+        </exclusion>
         <!-- Provided by apache-httpcomponents-client-4-api plugin -->
         <exclusion>
           <groupId>org.apache.httpcomponents</groupId>
@@ -66,6 +71,13 @@
     <dependency>
       <groupId>org.glassfish.jersey.containers</groupId>
       <artifactId>jersey-container-servlet</artifactId>
+      <exclusions>
+        <!-- Provided by core -->
+        <exclusion>
+          <groupId>jakarta.annotation</groupId>
+          <artifactId>jakarta.annotation-api</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.glassfish.jersey.inject</groupId>
