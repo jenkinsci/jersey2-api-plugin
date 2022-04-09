@@ -144,7 +144,7 @@
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>jackson2-api</artifactId>
-      <version>2.13.1-257.vb_254f61c3a_2b_</version> <!-- TODO https://github.com/jenkinsci/jackson2-api-plugin/pull/122 -->
+      <version>2.13.2-264.v22b_4f3616f0c</version> <!-- TODO https://github.com/jenkinsci/jackson2-api-plugin/pull/122 -->
       <optional>true</optional>
     </dependency>
   </dependencies>
