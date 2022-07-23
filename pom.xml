@@ -35,7 +35,7 @@
   <properties>
     <revision>2.36-3</revision>
     <changelist>-SNAPSHOT</changelist>
-    <jenkins.version>2.263.1</jenkins.version>
+    <jenkins.version>2.332.1</jenkins.version>
     <gitHubRepo>jenkinsci/${project.artifactId}-plugin</gitHubRepo>
   </properties>
 
@@ -55,7 +55,7 @@
     <dependency>
       <groupId>io.jenkins.plugins</groupId>
       <artifactId>javax-activation-api</artifactId>
-      <version>1.2.0-3</version>
+      <version>1.2.0-4</version>
     </dependency>
     <dependency>
       <groupId>io.jenkins.plugins</groupId>
