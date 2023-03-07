@@ -26,8 +26,8 @@ public class RestEasyTest {
         final ResteasyClient resteasyClient = builder.connectionPoolSize(60).build();
         final ResteasyWebTarget target = resteasyClient.target(j.getURL() + "jersey");
         final EmployeeService employeeService = target.proxy(EmployeeService.class);
-        final String employee = employeeService.getAtAsString("json");
-        final String expected = "{\"id\":1,\"firstName\":\"Noah\"}\n";
+        final String employee = employeeService.getAtAsString("json").trim();
+        final String expected = "{\"id\":1,\"firstName\":\"Noah\"}";
         assertEquals(expected, employee);
     }
 
