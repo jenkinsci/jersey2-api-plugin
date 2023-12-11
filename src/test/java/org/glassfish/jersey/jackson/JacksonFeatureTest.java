@@ -9,7 +9,8 @@ import org.jvnet.hudson.test.RealJenkinsRule;
 
 public class JacksonFeatureTest {
 
-    @Rule public RealJenkinsRule rr = new RealJenkinsRule();
+    @Rule
+    public RealJenkinsRule rr = new RealJenkinsRule();
 
     @Test
     public void smokes() throws Throwable {

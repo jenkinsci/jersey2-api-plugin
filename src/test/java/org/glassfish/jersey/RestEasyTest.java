@@ -18,7 +18,8 @@ import org.jvnet.hudson.test.TestExtension;
 
 public class RestEasyTest {
 
-    @Rule public JenkinsRule j = new JenkinsRule();
+    @Rule
+    public JenkinsRule j = new JenkinsRule();
 
     @Test
     public void withoutJackson() throws Exception {

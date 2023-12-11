@@ -13,7 +13,8 @@ import org.jvnet.hudson.test.RealJenkinsRule;
 
 public class JerseyTest {
 
-    @Rule public RealJenkinsRule rr = new RealJenkinsRule();
+    @Rule
+    public RealJenkinsRule rr = new RealJenkinsRule();
 
     @Test
     public void json() throws Throwable {
