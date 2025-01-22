@@ -1,13 +1,13 @@
 package org.glassfish.jersey;
 
 import hudson.model.UnprotectedRootAction;
+import jakarta.servlet.ServletException;
 import java.io.IOException;
 import java.net.URL;
-import javax.servlet.ServletException;
 import org.kohsuke.stapler.HttpResponse;
 import org.kohsuke.stapler.QueryParameter;
-import org.kohsuke.stapler.StaplerRequest;
-import org.kohsuke.stapler.StaplerResponse;
+import org.kohsuke.stapler.StaplerRequest2;
+import org.kohsuke.stapler.StaplerResponse2;
 
 public class JerseyResource implements UnprotectedRootAction {
 
@@ -38,7 +38,7 @@ public class JerseyResource implements UnprotectedRootAction {
         }
         return new HttpResponse() {
             @Override
-            public void generateResponse(StaplerRequest req, StaplerResponse rsp, Object node)
+            public void generateResponse(StaplerRequest2 req, StaplerResponse2 rsp, Object node)
                     throws IOException, ServletException {
                 rsp.setContentType(contentType + ";charset=UTF-8");
                 rsp.serveFile(req, url, 0);
