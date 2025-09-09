@@ -40,6 +40,8 @@
     <jenkins.version>${jenkins.baseline}.3</jenkins.version>
     <gitHubRepo>jenkinsci/${project.artifactId}-plugin</gitHubRepo>
     <spotless.check.skip>false</spotless.check.skip>
+    <hpi.bundledArtifacts>aopalliance-repackaged,hk2-api,hk2-locator,hk2-utils,jakarta.inject,jakarta.json,jakarta.json,jakarta.json-api,jakarta.json.bind-api,jakarta.validation-api,jakarta.ws.rs-api,javassist,jersey-apache-connector,jersey-client,jersey-common,jersey-container-servlet,jersey-container-servlet-core,jersey-entity-filtering,jersey-hk2,jersey-media-jaxb,jersey-media-json-binding,jersey-media-json-jackson,jersey-media-json-jettison,jersey-media-multipart,jersey-media-sse,jersey-server,jettison,mimepull,osgi-resource-locator,yasson</hpi.bundledArtifacts>
+    <hpi.strictBundledArtifacts>true</hpi.strictBundledArtifacts>
   </properties>
 
   <dependencyManagement>
