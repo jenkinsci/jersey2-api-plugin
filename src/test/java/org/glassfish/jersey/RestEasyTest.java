@@ -1,6 +1,6 @@
 package org.glassfish.jersey;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -11,18 +11,24 @@ import org.glassfish.jersey.jackson.JacksonFeature;
 import org.jboss.resteasy.client.jaxrs.ResteasyClient;
 import org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder;
 import org.jboss.resteasy.client.jaxrs.ResteasyWebTarget;
-import org.junit.Rule;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.jvnet.hudson.test.JenkinsRule;
 import org.jvnet.hudson.test.TestExtension;
+import org.jvnet.hudson.test.junit.jupiter.WithJenkins;
 
-public class RestEasyTest {
+@WithJenkins
+class RestEasyTest {
 
-    @Rule
-    public JenkinsRule j = new JenkinsRule();
+    private JenkinsRule j;
+
+    @BeforeEach
+    void beforeEach(JenkinsRule rule) {
+        j = rule;
+    }
 
     @Test
-    public void withoutJackson() throws Exception {
+    void withoutJackson() throws Exception {
         ResteasyClientBuilder builder = new ResteasyClientBuilder();
         final ResteasyClient resteasyClient = builder.connectionPoolSize(60).build();
         final ResteasyWebTarget target = resteasyClient.target(j.getURL() + "jersey");
@@ -33,7 +39,7 @@ public class RestEasyTest {
     }
 
     @Test
-    public void withJackson() throws Exception {
+    void withJackson() throws Exception {
         ResteasyClientBuilder builder = new ResteasyClientBuilder();
         final ResteasyClient resteasyClient =
                 builder.register(new JacksonFeature()).connectionPoolSize(60).build();
@@ -45,7 +51,7 @@ public class RestEasyTest {
     }
 
     @Path("/employee")
-    public static interface EmployeeService {
+    public interface EmployeeService {
 
         @GET
         @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
@@ -56,6 +62,7 @@ public class RestEasyTest {
         String getAtAsString(@QueryParam("q") String q);
     }
 
+    @SuppressWarnings("unused")
     @TestExtension
     public static class RestEasyJerseyResource extends JerseyResource {}
 }
