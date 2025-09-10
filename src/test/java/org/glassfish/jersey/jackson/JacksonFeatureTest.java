@@ -2,19 +2,19 @@ package org.glassfish.jersey.jackson;
 
 import org.glassfish.jersey.client.JerseyClient;
 import org.glassfish.jersey.client.JerseyClientBuilder;
-import org.junit.Rule;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.RegisterExtension;
 import org.jvnet.hudson.test.JenkinsRule;
-import org.jvnet.hudson.test.RealJenkinsRule;
+import org.jvnet.hudson.test.junit.jupiter.RealJenkinsExtension;
 
-public class JacksonFeatureTest {
+class JacksonFeatureTest {
 
-    @Rule
-    public RealJenkinsRule rr = new RealJenkinsRule();
+    @RegisterExtension
+    private final RealJenkinsExtension extension = new RealJenkinsExtension();
 
     @Test
-    public void smokes() throws Throwable {
-        rr.then(JacksonFeatureTest::_smokes);
+    void smokes() throws Throwable {
+        extension.then(JacksonFeatureTest::_smokes);
     }
 
     private static void _smokes(JenkinsRule r) {
